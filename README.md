@@ -1,7 +1,7 @@
 
 # ResolveJuros
 
-Aplicação que cria duas APIs com o intuito de fazer operações de juros (não possui interface gráfica)
+Aplicação que cria APIs com o intuito de fazer operações de juros (não possui interface gráfica)
 
 # APIs
 
