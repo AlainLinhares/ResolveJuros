@@ -6,6 +6,6 @@ namespace src.Common
 
         public const string Separator = "://";
 
-        public const string URLSourceFromGithub = "://";
+        public const string URLSourceFromGithub = "https://github.com/AlainLinhares/ResolveJuros";
     }
 }
