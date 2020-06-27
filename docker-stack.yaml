@@ -1,0 +1,8 @@
+version: '3.6'
+services:
+  resolvejuros:
+    image: resolvejuros
+    environment:
+      ASPNETCORE_URLS: http://+:4000
+    ports:
+      - "4000:4000"
