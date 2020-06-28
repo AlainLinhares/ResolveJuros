@@ -5,7 +5,7 @@ using src.Common;
 namespace ResolveJuros.Controllers
 {
     [ApiController]
-    public class ResolveJurosController : ControllerBase
+    public class RetornaTaxaJurosController : ControllerBase
     {
         /// <summary>
         /// Retorna o valor da taxa de juros

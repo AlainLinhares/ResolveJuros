@@ -1,6 +1,8 @@
+using System.Net.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ResolveJuros.Controllers;
+using RichardSzalay.MockHttp;
 using src.Common;
 
 namespace ResolveJurosTests
@@ -8,8 +10,9 @@ namespace ResolveJurosTests
     [TestClass]
     public class CalculaJurosTests
     {
+
         [TestMethod]
-        public void RetornaJurosTestOkResult()
+        public void RetornaURLFromGithubTestOkResult()
         {
             var controller = new CalculaJurosController();
             var response = controller.Showmethecode();
@@ -21,9 +24,8 @@ namespace ResolveJurosTests
             Assert.IsTrue(objResult.Value.ToString() == Constants.URLSourceFromGithub);
         }
 
-
         [TestMethod]
-        public void RetornaJurosTestFailedResult()
+        public void RetornaURLFromGithubTestFailedResult()
         {
             var controller = new CalculaJurosController();
             var response = controller.Showmethecode();

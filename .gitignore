@@ -3,3 +3,5 @@
 
 # Build results
 src/ResolveJuros/ResolveJuros.xml
+src/ResolveJurosTests/bin/
+src/ResolveJurosTests/obj/

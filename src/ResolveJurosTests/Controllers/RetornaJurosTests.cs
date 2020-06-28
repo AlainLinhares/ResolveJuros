@@ -1,4 +1,5 @@
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ResolveJuros.Controllers;
 using src.Common;
@@ -9,12 +10,25 @@ namespace ResolveJurosTests
     public class RetornaJurosTests
     {
         [TestMethod]
-        public void RetornaJurosTestOkResult()
+        public void RetornaTaxaJurosTestOkResult()
         {
-            var controller = new ResolveJurosController();
+            var controller = new RetornaTaxaJurosController();
             var response = controller.TaxaJuros();
 
-            Assert.IsInstanceOfType(response, typeof(Microsoft.AspNetCore.Mvc.OkResult));
+            ObjectResult objResult = (ObjectResult)response;
+
+            Assert.IsTrue(objResult.StatusCode == 200);
+        }
+
+        [TestMethod]
+        public void RetornaTaxaJurosTestFailedResult()
+        {
+            var controller = new RetornaTaxaJurosController();
+            var response = controller.TaxaJuros();
+
+            ObjectResult objResult = (ObjectResult)response;
+
+            Assert.IsFalse(objResult.StatusCode != 200);
         }
     }
 }
