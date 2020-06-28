@@ -1,8 +1,6 @@
-using System.Net.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ResolveJuros.Controllers;
-using RichardSzalay.MockHttp;
 using src.Common;
 
 namespace ResolveJurosTests

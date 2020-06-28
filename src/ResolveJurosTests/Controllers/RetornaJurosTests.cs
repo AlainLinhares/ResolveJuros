@@ -1,8 +1,6 @@
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ResolveJuros.Controllers;
-using src.Common;
 
 namespace ResolveJurosTests
 {
