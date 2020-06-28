@@ -13,13 +13,6 @@ namespace ResolveJuros.Controllers
 
         private HttpResponseMessage httpResponseMessage;
 
-        public CalculaJurosController()
-        {
-            HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri(this.Request.Scheme + Constants.Separator + this.Request.Host.Value);
-            httpResponseMessage = client.GetAsync("/taxaJuros").Result;
-        }
-
         /// <summary>
         /// Essa API faz um cálculo em memória, de juros compostos, usado como base a seguinte fórmula : Valor Final = Valor Inicial * (1 + juros) ^ Tempo
         /// </summary>
