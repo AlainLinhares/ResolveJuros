@@ -30,7 +30,7 @@ namespace ResolveJuros
                     {
                         Title = "ResolveJuros",
                         Version = "v1",
-                        Description = "Exemplo de duas API's REST criada com o ASP.NET Core. Responsáveis por fazer operações de juros",
+                    Description = "Exemplo de implementação de API's REST criada com o ASP.NET Core com o intuito de fazer operações de juros",
                         Contact = new OpenApiContact
                         {
                             Name = "Alain Melo",
