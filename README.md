@@ -74,4 +74,4 @@ SOFTWARE.
 
 **Desenvolvedor**: Alain Melo
 
-**Email**: arllmcomputação@gmail.com
+**Email**: arllmcomputacao@gmail.com
