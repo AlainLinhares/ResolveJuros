@@ -11,8 +11,6 @@ namespace ResolveJuros.Controllers
     public class CalculaJurosController : ControllerBase
     {
 
-        private HttpResponseMessage httpResponseMessage;
-
         /// <summary>
         /// Essa API faz um cálculo em memória, de juros compostos, usado como base a seguinte fórmula : Valor Final = Valor Inicial * (1 + juros) ^ Tempo
         /// </summary>

@@ -13,23 +13,39 @@ namespace ResolveJurosTests.Common
     {
 
         [TestMethod]
-        public async Task GetJuros()
+        public async Task GetJurosTestCorrectResult()
         {
             var mockHttp = new MockHttpMessageHandler();
 
             mockHttp.When("http://localhost/taxaJuros")
-                    .Respond("application/json", "2000");
+                    .Respond("application/json", Convert.ToString(Constants.TaxaJuros));
 
             var client = new HttpClient(mockHttp);
 
             var response = await client.GetAsync("http://localhost/taxaJuros");
-            var teste = await JurosHelper.GetJuros(response);
+            var taxaJuros = await JurosHelper.GetJuros(response);
 
-            Assert.IsTrue(teste == 2000);
+            Assert.IsTrue(taxaJuros == Constants.TaxaJuros);
         }
 
         [TestMethod]
-        public void CalculaResultValueOkResult()
+        public async Task GetJurosTestIncorrectResult()
+        {
+            var mockHttp = new MockHttpMessageHandler();
+
+            mockHttp.When("http://localhost/taxaJuros")
+                    .Respond("application/json", "100");
+
+            var client = new HttpClient(mockHttp);
+
+            var response = await client.GetAsync("http://localhost/taxaJuros");
+            var taxaJuros = await JurosHelper.GetJuros(response);
+
+            Assert.IsFalse(taxaJuros == Constants.TaxaJuros);
+        }
+
+        [TestMethod]
+        public void CalculaResultValueCorrectResult()
         {
             double taxaJuros = 0.01;
             decimal valorInicial = 100;
@@ -37,6 +53,17 @@ namespace ResolveJurosTests.Common
             var response = JurosHelper.CalculaJuros(taxaJuros, valorInicial, tempo);
 
             Assert.IsTrue(Convert.ToDouble(response.Result) == 105.10);
+        }
+
+        [TestMethod]
+        public void CalculaResultValueIncorrectResult()
+        {
+            double taxaJuros = 0;
+            decimal valorInicial = 100;
+            int tempo = 5;
+            var response = JurosHelper.CalculaJuros(taxaJuros, valorInicial, tempo);
+
+            Assert.IsFalse(Convert.ToDouble(response.Result) == 105.10);
         }
     }
 }
